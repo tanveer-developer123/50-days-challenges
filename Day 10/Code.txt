@@ -1,0 +1,34 @@
+ChatGPT said:
+
+Samajh gaya 👌 tum pooch rahe ho: “Kaunse status codes sabse zyada real world projects me use hote hain?”
+
+Bhai, ye best shortlist hai jo har developer bar-bar use karta hai:
+
+🔥 Sabse Zyada Used Status Codes
+✅ Success (200 series)
+
+200 OK → Default success (GET, PUT, DELETE sab me).
+
+201 Created → Jab naya resource add hota hai (POST).
+
+204 No Content → Jab resource delete/update ho jata hai, lekin koi data return nahi karte.
+
+❌ Client Errors (400 series)
+
+400 Bad Request → Jab request galat hai (jaise missing field).
+
+401 Unauthorized → Jab user login/token nahi bhejta.
+
+403 Forbidden → Jab user ko permission hi nahi hai.
+
+404 Not Found → Resource exist hi nahi karta (ye sabse zyada dikhne wala error hai 🚨).
+
+⚠️ Server Errors (500 series)
+
+500 Internal Server Error → Jab backend crash ya unknown error ho.
+
+👉 Matlab tum keh sakte ho:
+200, 201, 204, 400, 401, 403, 404, 500
+ye 8 status codes hi 90% real world use cases cover kar lete hain.
+
+Malik, chaho to mai tumhare liye ek Express example bana du jisme sirf ye hi 8 codes practical use ho (mini API ke sath)?

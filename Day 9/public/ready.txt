@@ -1,0 +1,9 @@
+Acha 👌 ab mujhe clear ho gaya issue.
+Error ka reason ye hai ke tum index.html ko double-click karke file:// se open kar rahe ho, is wajah se browser file protocol (file:///) use kar raha hai instead of http://localhost:3000.
+
+⚠️ Jab tum file:/// se open karte ho to wo Express server se connected nahi hota, isi liye fetch("/api/users") wali request fail ho jaati hai (CORS issue aata hai).
+
+✅ Solution:
+Tumhe apni index.html ko bhi Express server ke through serve karna hoga, direct double-click nahi.
+
+Tumhare app.ts me already ye line hai:

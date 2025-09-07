@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awesome Site — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a class="brand" href="/">Awesome<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>Build Fast, Look Sharp.</h1>
+      <p>Static files served by Express for a blazing‑fast, secure, and beautiful experience.</p>
+      <div class="cta">
+        <a class="btn primary" href="#features">See Features</a>
+        <a class="btn ghost" href="/about.html">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="/assets/hero-illustration.svg" alt="Hero illustration">
+    </div>
+  </section>
+
+  <section id="features" class="features container">
+    <h2>Everything you need</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Responsive</h3>
+        <p>Looks great on mobile, tablet, and desktop with a clean, flexible layout.</p>
+      </article>
+      <article class="card">
+        <h3>Fast</h3>
+        <p>Served statically by Express with caching and compression enabled.</p>
+      </article>
+      <article class="card">
+        <h3>Secure</h3>
+        <p>Best‑practice headers via Helmet and minimal attack surface.</p>
+      </article>
+      <article class="card">
+        <h3>TypeScript</h3>
+        <p>Modern DX with strict typing and a simple dev workflow.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Awesome. All rights reserved.</p>
+  </footer>
+</body>
+</html>

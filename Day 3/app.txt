@@ -1,0 +1,14 @@
+| No. | Method/Property            | Purpose                              |
+| --- | -------------------------- | ------------------------------------ |
+| 1   | `app.listen()`             | Server start                         ✅
+| 2   | `app.get()`                | Handle GET request                   |✅
+| 3   | `app.post()`               | Handle POST request                  ✅
+| 4   | `app.put()`                | Handle PUT request                   ✅
+| 5   | `app.delete()`             | Handle DELETE request               ✅
+| 6   | `app.use()`                | Apply middleware or mount routers    ✅
+| 7   | `app.set()`                | Set application settings             |
+| 8   | `app.engine()`             | Register custom template engine      |
+| 9   | `app.all()`                | Handle all HTTP methods              |
+| 10  | `app.route()`              | Create chainable route handler       |
+| 11  | `app.locals`               | Store global variables for templates |
+| 12  | `app.use('/path', router)` | Mount router at path                 ✅

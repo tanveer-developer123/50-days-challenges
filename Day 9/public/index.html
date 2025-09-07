@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Manager</title>
+</head>
+<style>
+    /* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  background: white;
+  padding: 20px 30px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px 15px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #45a049;
+}
+
+/* User List */
+#userList {
+  list-style: none;
+  padding: 0;
+}
+
+#userList li {
+  background: #fafafa;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#userList button {
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#userList button:hover {
+  background: #c0392b;
+}
+
+</style>
+<body>
+  <div class="container">
+    <h1>User Manager App</h1>
+
+    <!-- Add User Form -->
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Enter name" required />
+      <input type="number" id="age" placeholder="Enter age" required />
+      <button type="submit">Add User</button>
+    </form>
+
+    <h2>All Users</h2>
+    <ul id="userList"></ul>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

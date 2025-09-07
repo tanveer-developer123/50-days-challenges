@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Awesome Site</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/script.js"></script>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav">
+      <a class="brand" href="/">Awesome<span>.</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html" class="active">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container prose">
+    <h1>About this site</h1>
+    <p>This is a minimal, modern static website served by an Express + TypeScript backend. It demonstrates how to organize public assets and keep backend logic separate from UI.</p>
+    <ul>
+      <li>Express serves files from <code>/public</code></li>
+      <li>Strong defaults: Helmet, Compression, CORS and logging</li>
+      <li>Zero build for the frontend — just HTML, CSS and JS</li>
+    </ul>
+  </main>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Awesome. All rights reserved.</p>
+  </footer>
+</body>
+</html>

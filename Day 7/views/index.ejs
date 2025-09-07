@@ -1,0 +1,13 @@
+<%- include("partials/header", { title: "Home", activePage: "home" }) %>
+
+<h1>Welcome <%= user %></h1>
+<p>Here are your favorite fruits:</p>
+<button id="alertBtn">Click Me</button>
+
+<ul>
+  <% fruits.forEach(fruit => { %>
+    <li><%= fruit %></li>
+  <% }) %>
+</ul>
+
+<%- include("partials/footer") %>
