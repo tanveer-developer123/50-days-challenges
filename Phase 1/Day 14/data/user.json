@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Ali",
+        "email": "ali@example.com",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "Sara",
+        "email": "sara@example.com",
+        "role": "user"
+    },
+    {
+        "id": 3,
+        "name": "Ahmed",
+        "email": "ahmed@example.com",
+        "role": "user"
+    },
+    {
+        "id": 4,
+        "name": "Fatima",
+        "email": "fatima@example.com",
+        "role": "moderator"
+    },
+    {
+        "id": 5,
+        "name": "Usman",
+        "email": "usman@example.com",
+        "role": "user"
+    },
+    {
+        "id": 6,
+        "name": "Zainab",
+        "email": "zainab@example.com",
+        "role": "user"
+    },
+    {
+        "id": 7,
+        "name": "Hamza",
+        "email": "hamza@example.com",
+        "role": "user"
+    },
+    {
+        "id": 8,
+        "name": "Noor",
+        "email": "noor@example.com",
+        "role": "user"
+    },
+    {
+        "id": 9,
+        "name": "Bilal",
+        "email": "bilal@example.com",
+        "role": "moderator"
+    },
+    {
+        "id": 10,
+        "name": "Ayesha",
+        "email": "ayesha@example.com",
+        "role": "user"
+    }
+]

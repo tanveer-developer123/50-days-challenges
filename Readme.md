@@ -26,17 +26,17 @@ Start on 1st Auguast 2025
 
 | Day | Topics                                
 | --- | ------------------------------------- 
-| 16  | MongoDB + Mongoose Setup              
-| 17  | Mongoose Models & Schemas             
-| 18  | CRUD Operations with MongoDB          
+| 16  | PostgreSQL Setup (install, pgAdmin / CLI)             
+| 17  | Tables, Schemas & Data Types in PostgreSQL
+| 18  | CRUD Operations with PostgreSQL + SQL basics
 | 19  | Async/Await in Express                
-| 20  | MVC Pattern in Express                
+| 20  | MVC Pattern in Express + PostgreSQL            
 | 21  | RESTful APIs with Controllers         
-| 22  | Relationship in MongoDB (populate)    
-| 23  | File Upload (Multer)                  
+| 22  | Relationships in PostgreSQL (JOIN, FK)   
+| 23  | File Upload (Multer) with PostgreSQL reference    
 | 24  | Validation with express-validator     
-| 25  | Pagination, Filtering, Searching      
-| 26  | Project: Blog API (MongoDB + Express) 
+| 25  | Pagination, Filtering, Searching (SQL + API)     
+| 26  | Project: Blog API (PostgreSQL + Express)
 | 27  | CORS and Security Headers             
 | 28  | Rate Limiting and Helmet.js           
 | 29  | Global Error Handler + Custom Errors  
@@ -89,7 +89,7 @@ Start on 1st Auguast 2025
 
 ### ⚙ *Tech Stack Suggestions:*
 
-* *DB*: MongoDB (or PostgreSQL if needed)
+* *DB*: PostgreSQL (or MongoDB if needed)
 * *Security*: Helmet, bcrypt, express-rate-limit
 * *Auth*: JWT, OAuth, sessions
 * *Tools*: Postman, Nodemon, GitHub
