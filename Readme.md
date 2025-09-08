@@ -26,17 +26,17 @@ Start on 1st Auguast 2025
 
 | Day | Topics                                
 | --- | ------------------------------------- 
-| 16  | PostgreSQL Setup (install, pgAdmin / CLI)             
-| 17  | Tables, Schemas & Data Types in PostgreSQL
-| 18  | CRUD Operations with PostgreSQL + SQL basics
+| 16  | SQLite3 Setup (install, DB Browser / CLI)              ✅     
+| 17  | Tables, Schemas & Data Types in SQLLite3
+| 18  | CRUD Operations with SQLite3 + SQL basics
 | 19  | Async/Await in Express                
-| 20  | MVC Pattern in Express + PostgreSQL            
+| 20  | MVC Pattern in Express + SQLite3         
 | 21  | RESTful APIs with Controllers         
-| 22  | Relationships in PostgreSQL (JOIN, FK)   
-| 23  | File Upload (Multer) with PostgreSQL reference    
+| 22  | Relationships in SQLite3 (JOIN, FK)   
+| 23  | File Upload (Multer) with SQLite3 reference    
 | 24  | Validation with express-validator     
 | 25  | Pagination, Filtering, Searching (SQL + API)     
-| 26  | Project: Blog API (PostgreSQL + Express)
+| 26  | Project: Blog API (SQLite3 + Express)
 | 27  | CORS and Security Headers             
 | 28  | Rate Limiting and Helmet.js           
 | 29  | Global Error Handler + Custom Errors  
@@ -89,7 +89,7 @@ Start on 1st Auguast 2025
 
 ### ⚙ *Tech Stack Suggestions:*
 
-* *DB*: PostgreSQL (or MongoDB if needed)
+* *DB*: SQLite3 (or PostgreSQL , MongoDB if needed)
 * *Security*: Helmet, bcrypt, express-rate-limit
 * *Auth*: JWT, OAuth, sessions
 * *Tools*: Postman, Nodemon, GitHub
