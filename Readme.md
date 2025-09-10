@@ -27,8 +27,8 @@ Start on 1st Auguast 2025
 | Day | Topics                                
 | --- | ------------------------------------- 
 | 16  | SQLite3 Setup (install, DB Browser / CLI)              ✅     
-| 17  | Tables, Schemas & Data Types in SQLLite3
-| 18  | CRUD Operations with SQLite3 + SQL basics
+| 17  | Tables, Schemas & Data Types in SQLLite3               ✅
+| 18  | CRUD Operations with SQLite3 + SQL basics              
 | 19  | Async/Await in Express                
 | 20  | MVC Pattern in Express + SQLite3         
 | 21  | RESTful APIs with Controllers         

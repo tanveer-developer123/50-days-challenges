@@ -1,0 +1,187 @@
+acha ✅ samajh gaya. tu chahta hai ki tere paas **future ke liye ek proper CRUD Notes Pack** ho — matlab `create.md`, `read.md`, `update.md`, aur `delete.md` 4 alag-alag files ready hon, jisme har ek ka **explanation + examples** likha ho.
+
+mai tujhe roadmap samjha deta hoon:
+
+---
+
+## 📂 Future CRUD Notes Pack (Markdown Files)
+
+### 1. `create.md` ✅ (already ready)
+
+* 10 tarike `CREATE TABLE` ke (Primary Key, Unique, Not Null, Default, Foreign Key, Temporary, IF NOT EXISTS, etc.)
+
+---
+
+### 2. `read.md`
+
+* 12 tarike `SELECT` ke
+
+  * `SELECT *`
+  * Specific columns
+  * `WHERE`, `ORDER BY`, `LIMIT`
+  * `DISTINCT`, `LIKE`, `IN`, `BETWEEN`
+  * Aggregates (`COUNT`, `MAX`, `AVG`)
+  * `GROUP BY + HAVING`
+
+---
+
+### 3. `update.md`
+
+* `UPDATE` ke methods
+
+  * Single column update
+  * Multiple column update
+  * Conditional update with `WHERE`
+  * Update with `CASE`
+  * Update using data from another table (`UPDATE ... SET ... FROM ...`)
+
+---
+
+### 4. `delete.md`
+
+* `DELETE` ke methods
+
+  * Simple delete
+  * Conditional delete with `WHERE`
+  * Delete with `IN`, `BETWEEN`
+  * Delete all rows (`DELETE FROM table;`)
+  * Delete + Foreign Key cascade
+
+---
+
+⚡ matlab agar mai banaun to tere paas ek **CRUD Notes Pack** hoga jisme tu easily seekh lega aur revise kar lega.
+
+👉 kya tu chahta hai mai abhi tere liye **next file (`read.md`)** bana du exactly waise hi jaise `create.md` banaya tha?
+
+
+It seems like I can’t do more advanced data analysis right now. Please try again later.
+
+lekin koi masla nahi 🙂 mai tujhe `create.md` ka **ready content** yahin de deta hoon. Tu isse copy karke apne system me ek file bana le **`create.md`** naam se.
+
+---
+
+# 📂 create.md
+
+````markdown
+# SQLite3 - Create (C in CRUD) Cheat Sheet
+
+SQLite3 me CREATE ka matlab hota hai naye tables aur unke structure design karna.  
+Yani hum define karte hain ki kaunsi columns hongi, unka data type kya hoga, aur constraints (rules) kya lagane hain.
+
+---
+
+## 1. Simple table banana
+```sql
+CREATE TABLE users (
+    id INTEGER,
+    name TEXT,
+    age INTEGER
+);
+````
+
+---
+
+## 2. Primary Key ke sath
+
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER
+);
+```
+
+---
+
+## 3. AUTOINCREMENT use karke
+
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER
+);
+```
+
+---
+
+## 4. UNIQUE constraint
+
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    email TEXT UNIQUE
+);
+```
+
+---
+
+## 5. NOT NULL constraint
+
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);
+```
+
+---
+
+## 6. DEFAULT value set karna
+
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    status TEXT DEFAULT 'active'
+);
+```
+
+---
+
+## 7. Foreign Key use karna
+
+```sql
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    product TEXT,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
+```
+
+---
+
+## 8. IF NOT EXISTS ke sath
+
+```sql
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
+```
+
+---
+
+## 9. Temporary table banana
+
+```sql
+CREATE TEMPORARY TABLE temp_users (
+    id INTEGER,
+    name TEXT
+);
+```
+
+---
+
+## 10. Dusre table ke structure se banana
+
+```sql
+CREATE TABLE new_users AS SELECT * FROM users;
+```
+
+```
+
+---
+
+👉 chaahta hai mai isi tarah **update.md** aur **delete.md** bhi bana kar de dun?
+```
