@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Users</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+    }
+    th {
+      background: #007bff;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    tr:hover {
+      background: #f9f9f9;
+    }
+    .btn {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      display: inline-block;
+    }
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .btn-edit {
+      background: #28a745;
+    }
+    .btn-delete {
+      background: #dc3545;
+    }
+    .btn-add {
+      background: #007bff;
+      margin-bottom: 20px;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .no-users {
+      text-align: center;
+      color: #888;
+      padding: 20px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Users Dashboard</h1>
+  </header>
+  
+  <div class="container">
+    <a href="/users/add" class="btn btn-add">➕ Add New User</a>
+
+    <% if (users.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.message %></td>
+              <td class="actions">
+                <a href="/users/edit/<%= user.id %>" class="btn btn-edit">✏ Edit</a>
+                <form action="/users/delete/<%= user.id %>" method="POST" style="display:inline;">
+                  <button type="submit" class="btn btn-delete">❌ Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <div class="no-users">No users found. Please add a new user!</div>
+    <% } %>
+  </div>
+</body>
+</html>

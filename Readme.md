@@ -30,8 +30,8 @@ Start on 1st Auguast 2025
 | 17  | Tables, Schemas & Data Types in SQLLite3               ✅
 | 18  | CRUD Operations with SQLite3 + SQL basics              ✅
 | 19  | Async/Await in Express                                 ✅
-| 20  | MVC Pattern in Express + SQLite3                       
-| 21  | RESTful APIs with Controllers                          
+| 20  | MVC Pattern in Express + SQLite3                       ✅
+| 21  | RESTful APIs with Controllers                          ✅
 | 22  | Relationships in SQLite3 (JOIN, FK)                    
 | 23  | File Upload (Multer) with SQLite3 reference            
 | 24  | Validation with express-validator     
