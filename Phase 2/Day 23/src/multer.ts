@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import * as sqlite3 from 'sqlite3'; // TypeScript-safe import
+import sqlite3 from 'sqlite3'; 
 
 // ----- Multer Setup -----
 const storage = multer.diskStorage({
