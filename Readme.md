@@ -1,30 +1,30 @@
-Start on 1st Auguast 2025
+Start on 20 Auguast 2025
 
 ### ✅ *Phase 1: Express.js Core (Day 1–15)*
 
-| Day | Topics                                            |
-| --- | ------------------------------------------------- |
-| 1   | What is Express? Setup Node + nodemon + Express App    ✅    
-| 2   | app.listen(), req & res objects                        ✅
-| 3   | Routes: app.get(), app.post(), RESTful routes          ✅
-| 4   | Route Parameters and Query Strings                     ✅
-| 5   | Express Middleware: Basics, Custom Middleware          ✅
-| 6   | Serving Static Files (images, HTML, etc.)              ✅
-| 7   | Templating Engines: EJS or Pug                         ✅
-| 8   | JSON Response & res.json()                             ✅
-| 9   | Project: Mini REST API without DB                      ✅
-| 10  | HTTP Status Codes & Headers                            ✅
-| 11  | Error Handling (next(), error middleware)              ✅
-| 12  | Working with Postman                                   ✅
-| 13  | Environment Variables using dotenv                     ✅
-| 14  | Route Modularization (express.Router)                  ✅
-| 15  | Recap + Practice Day                                   ✅
+Date | Day | Topics                                            |
+20   | --- | ------------------------------------------------- |
+21   | 1   | What is Express? Setup Node + nodemon + Express App    ✅    
+22    | 2   | app.listen(), req & res objects                        ✅
+23    | 3   | Routes: app.get(), app.post(), RESTful routes          ✅
+24    | 4   | Route Parameters and Query Strings                     ✅
+25    | 5   | Express Middleware: Basics, Custom Middleware          ✅
+26  | 6   | Serving Static Files (images, HTML, etc.)              ✅
+27  | 7   | Templating Engines: EJS or Pug                         ✅
+28  | 8   | JSON Response & res.json()                             ✅
+29  | 9   | Project: Mini REST API without DB                      ✅
+30  | 10  | HTTP Status Codes & Headers                            ✅
+31  | 11  | Error Handling (next(), error middleware)              ✅
+1  | 12  | Working with Postman                                   ✅
+2   | 13  | Environment Variables using dotenv                     ✅
+3    | 14  | Route Modularization (express.Router)                  ✅
+4   | 15  | Recap + Practice Day                                   ✅
 
 ---
 
 ### ✅ *Phase 2: Intermediate Concepts (Day 16–30)*
 
-| Day | Topics                                
+Date | Day | Topics                                
 | --- | ------------------------------------- 
 | 16  | SQLite3 Setup (install, DB Browser / CLI)              ✅     
 | 17  | Tables, Schemas & Data Types in SQLLite3               ✅
