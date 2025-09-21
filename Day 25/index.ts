@@ -1,93 +1,93 @@
-import express, { Request, Response } from 'express';
-import sqlite3 from 'sqlite3';
+import express from "express";
+import sqlite3 from "sqlite3";
+import { open } from "sqlite";
 
-// Types for user data
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  country: string;
-}
-
-interface Pagination {
-  page: number;
-  limit: number;
-  total: number;
-  totalPages: number;
-}
-
-// Initialize app and DB
-const db = new sqlite3.Database('./database.db');
 const app = express();
 const PORT = 3000;
-app.use(express.json());
 
-// GET /users endpoint
-app.get('/users', async (req: Request, res: Response) => {
-  try {
-    // Query params with defaults
-    const { page = '1', limit = '10', country, search } = req.query;
-
-    // Convert to numbers and validate
-    const pageNum = parseInt(page as string);
-    const limitNum = parseInt(limit as string);
-
-    if (isNaN(pageNum) || isNaN(limitNum) || pageNum < 1 || limitNum < 1) {
-      return res.status(400).json({ error: 'Page ya limit galat hai' });
-    }
-
-    // Build WHERE clause dynamically
-    let whereClause = '';
-    const params: (string | number)[] = [];
-
-    if (country) {
-      whereClause += ' WHERE country = ?';
-      params.push(country as string);
-    }
-    if (search) {
-      const searchCondition = ' (name LIKE ? OR email LIKE ?)';
-      whereClause += whereClause ? ' AND' + searchCondition : ' WHERE' + searchCondition;
-      params.push(`%${search}%`, `%${search}%`);
-    }
-
-    // Get total count
-    const countQuery = `SELECT COUNT(*) as total FROM users${whereClause}`;
-    const totalResult = await new Promise<{ total: number }>((resolve, reject) => {
-      db.get(countQuery, params, (err, row: { total: number }) => {
-        if (err) reject(err);
-        resolve(row);
-      });
-    });
-
-    // Get paginated data
-    const offset = (pageNum - 1) * limitNum;
-    const dataQuery = `SELECT * FROM users${whereClause} LIMIT ? OFFSET ?`;
-    const queryParams = [...params, limitNum, offset];
-    const users = await new Promise<User[]>((resolve, reject) => {
-      db.all(dataQuery, queryParams, (err, rows: User[]) => {
-        if (err) reject(err);
-        resolve(rows);
-      });
-    });
-
-    // Response
-    const response: { users: User[]; pagination: Pagination } = {
-      users,
-      pagination: {
-        page: pageNum,
-        limit: limitNum,
-        total: totalResult.total,
-        totalPages: Math.ceil(totalResult.total / limitNum),
-      },
-    };
-
-    res.json(response);
-  } catch (error) {
-    res.status(500).json({ error: 'Kuch toh gadbad hai' });
-  }
+// Database connect
+const dbPromise = open({
+  filename: "./Rel.sqlite3",
+  driver: sqlite3.Database,
 });
 
-// Start server
+app.get("/users", async (req, res) => {
+  const db = await dbPromise;
+
+  // Query params (page, limit)
+  const page = parseInt(req.query.page as string) || 1;
+  const limit = parseInt(req.query.limit as string) || 5;
+
+  const offset = (page - 1) * limit;
+
+  // Total records count
+  const totalResult = await db.get("SELECT COUNT(*) as total FROM users");
+  const total = totalResult.total;
+
+  // Data fetch with pagination
+  const rows = await db.all("SELECT * FROM users LIMIT ? OFFSET ?", [
+    limit,
+    offset,
+  ]);
+
+  res.json({
+    page,
+    limit,
+    totalRecords: total,
+    totalPages: Math.ceil(total / limit),
+    data: rows,
+  });
+});
+
+app.get("/userses", async (req, res) => {
+  const db = await dbPromise;
+
+  const { id, name, country ,email} = req.query;
+
+  let query = "SELECT * FROM users WHERE 1=1";  // base query
+  let params = [];
+
+  if (id) {
+    query += " AND id = ?";
+    params.push(id);
+  }
+
+  if (name) {
+    query += " AND name = ?";
+    params.push(name);
+  }
+  if (email) {
+    query += " AND email = ?";
+    params.push(email);
+  }
+
+  if (country) {
+    query += " AND country = ?";
+    params.push(country);
+  }
+
+  const rows = await db.all(query, params);
+  res.json(rows);
+});
+
+app.get("/users/search", async (req, res) => {
+  const db = await dbPromise;
+  const { q } = req.query; // search query (input se aayegi)
+
+  if (!q) {
+    return res.json({ message: "Please provide a search query ?q=" });
+  }
+
+  // Search in name OR email
+  const rows = await db.all(
+    "SELECT * FROM users WHERE name LIKE ? OR email LIKE ?",
+    [`%${q}%`, `%${q}%`]
+  );
+
+  res.json(rows);
+});
+
+
 app.listen(PORT, () => {
-    console.log(`Server is Running in localhost:${PORT}`)
+  console.log(`Server running on http://localhost:${PORT}`);
 });
