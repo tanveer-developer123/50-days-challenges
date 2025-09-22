@@ -35,7 +35,7 @@ Start on 20 Auguast 2025
 | 22  | Relationships in SQLite3 (JOIN, FK)                    ✅
 | 23  | File Upload (Multer) with SQLite3 reference            ✅
 | 24  | Validation with express-validator                      ✅
-| 25  | Pagination, Filtering, Searching (SQL + API)           
+| 25  | Pagination, Filtering, Searching (SQL + API)           ✅
 | 26  | Project: Blog API (SQLite3 + Express)
 | 27  | CORS and Security Headers             
 | 28  | Rate Limiting and Helmet.js           
