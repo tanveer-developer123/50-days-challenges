@@ -37,8 +37,9 @@ Start on 20 Auguast 2025
 | 24  | Validation with express-validator                      ✅
 | 25  | Pagination, Filtering, Searching (SQL + API)           ✅
 | 26  | Project: Blog API (SQLite3 + Express)                  ✅
-| 27  | CORS and Security Headers             
-| 28  | Rate Limiting and Helmet.js           
+| 27  | CORS and Security Headers                              ✅
+| 27  | CORS and Security Headers                              ✅
+| 28  | Rate Limiting and Helmet.js                            ✅
 | 29  | Global Error Handler + Custom Errors  
 | 30  | Recap + Project Review                
 
