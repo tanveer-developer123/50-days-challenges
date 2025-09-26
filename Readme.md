@@ -40,8 +40,8 @@ Start on 20 Auguast 2025
 | 27  | CORS and Security Headers                              ✅
 | 27  | CORS and Security Headers                              ✅
 | 28  | Rate Limiting and Helmet.js                            ✅
-| 29  | Global Error Handler + Custom Errors  
-| 30  | Recap + Project Review                
+| 29  | Global Error Handler + Custom Errors                   ✅
+| 30  | Recap + Project Review                                 ✅
 
 ---
 
