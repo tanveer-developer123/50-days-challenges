@@ -49,8 +49,8 @@ Start on 20 Auguast 2025
 
 | Day | Topics                              |
 | --- | -----------------------------------
-| 31  | JWT Authentication: Signup/Login   
-| 32  | Protecting Routes with JWT         
+| 31  | JWT Authentication: Signup/Login                      ✅
+| 32  | Protecting Routes with JWT                            ✅
 | 33  | Refresh Tokens                     
 | 34  | Session & Cookies (express-session)
 | 35  | Role-Based Access Control          
