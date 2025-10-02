@@ -53,7 +53,7 @@ Start on 20 Auguast 2025
 | 32  | Protecting Routes with JWT                            ✅
 | 33  | Refresh Tokens                                        ✅
 | 34  | Session & Cookies (express-session)                   ✅
-| 35  | Role-Based Access Control          
+| 35  | Role-Based Access Control                             ✅
 | 36  | OAuth with Google or GitHub        
 | 37  | WebSockets (Intro to socket.io)    
 | 38  | API Rate Limiting, Throttling      
