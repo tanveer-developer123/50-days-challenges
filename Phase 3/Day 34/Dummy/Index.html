@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Deals Pro Logo Image Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        .font-inter { font-family: 'Inter', sans-serif; }
+        /* Custom spinner animation */
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #10b981; /* Tailwind teal-500 equivalent */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div id="app" class="bg-white shadow-2xl rounded-xl p-6 md:p-10 w-full max-w-lg flex flex-col items-center">
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-6 font-inter text-center">
+            Daily Deals Pro Logo
+        </h1>
+        <p class="text-sm text-gray-500 mb-6 text-center">
+            Generating a high-quality, circular image for your profile picture (DP).
+        </p>
+
+        <!-- Dynamic Content Area -->
+        <div id="content-area" class="w-full flex flex-col items-center min-h-[300px] justify-center">
+            <!-- Loading State -->
+            <div id="loading-state" class="flex flex-col items-center">
+                <div class="spinner mb-4"></div>
+                <p class="text-lg font-semibold text-teal-600">Generating Logo... Please Wait.</p>
+                <p class="text-xs text-gray-500 mt-1">This can take up to 30 seconds.</p>
+            </div>
+
+            <!-- Result State (Hidden initially) -->
+            <div id="result-state" class="hidden w-full flex flex-col items-center">
+                <img id="logo-image" src="" alt="Generated Daily Deals Pro Logo" class="w-64 h-64 rounded-full shadow-xl border-4 border-teal-500 mb-6 object-cover"/>
+                
+                <h2 class="text-xl font-bold text-gray-800 mb-3 font-inter">Your Logo is Ready!</h2>
+                
+                <p class="text-sm text-gray-600 mb-4 text-center">
+                    Right-click the image and select "Save Image As..." to download it for your DP.
+                </p>
+
+                <a id="download-link" href="#" download="daily_deals_pro_logo.png" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-150 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                    Download Image
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = "";
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${API_KEY}`;
+        
+        const contentArea = document.getElementById('content-area');
+        const loadingState = document.getElementById('loading-state');
+        const resultState = document.getElementById('result-state');
+        const logoImage = document.getElementById('logo-image');
+        const downloadLink = document.getElementById('download-link');
+
+        // This prompt is based on the SVG design we discussed (price tag, checkmark, blue/teal)
+        const userPrompt = "A simple, professional, and modern circular logo design for 'Daily Deals Pro' suitable for a social media profile picture. It should feature a deep blue (#1e3a8a) background. The main element is a vibrant teal (#2dd4bf) stylized shopping tag or price tag shape with a clean white checkmark (symbolizing 'Pro' quality) inside it. Minimalist vector art style, high contrast, bold lines. Aspect ratio 1:1.";
+        
+        /**
+         * Converts a base64 string to a Blob object.
+         * @param {string} b64Data Base64 string.
+         * @param {string} contentType Content type, default 'image/png'.
+         * @returns {Blob} The Blob object.
+         */
+        function b64toBlob(b64Data, contentType = 'image/png', sliceSize = 512) {
+            const byteCharacters = atob(b64Data);
+            const byteArrays = [];
+
+            for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                const slice = byteCharacters.slice(offset, offset + sliceSize);
+                const byteNumbers = new Array(slice.length);
+                for (let i = 0; i < slice.length; i++) {
+                    byteNumbers[i] = slice.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                byteArrays.push(byteArray);
+            }
+
+            return new Blob(byteArrays, {type: contentType});
+        }
+        
+        /**
+         * Fetches the generated image from the API with exponential backoff.
+         * @param {number} attempt Current retry attempt (starts at 1).
+         */
+        async function generateImage(attempt = 1) {
+            if (attempt > 5) {
+                console.error("Failed to generate image after 5 attempts.");
+                loadingState.innerHTML = '<p class="text-red-600 font-semibold">Image generation failed. Please try again.</p>';
+                return;
+            }
+
+            const payload = { 
+                instances: { prompt: userPrompt }, 
+                parameters: { "sampleCount": 1 } 
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                const base64Data = result?.predictions?.[0]?.bytesBase64Encoded;
+
+                if (base64Data) {
+                    const imageUrl = `data:image/png;base64,${base64Data}`;
+                    logoImage.src = imageUrl;
+                    
+                    // Create a Blob and Object URL for proper download link
+                    const imageBlob = b64toBlob(base64Data, 'image/png');
+                    const blobUrl = URL.createObjectURL(imageBlob);
+                    downloadLink.href = blobUrl;
+                    
+                    // Hide loading and show result
+                    loadingState.classList.add('hidden');
+                    resultState.classList.remove('hidden');
+
+                } else {
+                    throw new Error("API response missing image data.");
+                }
+
+            } catch (error) {
+                console.error(`Attempt ${attempt} failed. Retrying...`, error);
+                const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
+                await new Promise(resolve => setTimeout(resolve, delay));
+                generateImage(attempt + 1);
+            }
+        }
+
+        // Start the generation process when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            generateImage();
+        });
+
+    </script>
+</body>
+</html>
+
+
+<!-- Gimni sa try kia bs  -->
