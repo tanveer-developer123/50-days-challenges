@@ -4,7 +4,7 @@ Start on 20 Auguast 2025
 
 | Day | Topics                                            |
 | --- | ------------------------------------------------- |
-| 1   | What is Express? Setup Node + nodemon + Express App    ✅    
+| 1   | What is Express? Setup Node + nodemon + Express App    ✅
 | 2   | app.listen(), req & res objects                        ✅
 | 3   | Routes: app.get(), app.post(), RESTful routes          ✅
 | 4   | Route Parameters and Query Strings                     ✅
@@ -24,9 +24,9 @@ Start on 20 Auguast 2025
 
 ### ✅ *Phase 2: Intermediate Concepts (Day 16–30)*
 
-| Day | Topics                                
-| --- | ------------------------------------- 
-| 16  | SQLite3 Setup (install, DB Browser / CLI)              ✅     
+| Day | Topics
+| --- | -------------------------------------
+| 16  | SQLite3 Setup (install, DB Browser / CLI)              ✅
 | 17  | Tables, Schemas & Data Types in SQLLite3               ✅
 | 18  | CRUD Operations with SQLite3 + SQL basics              ✅
 | 19  | Async/Await in Express                                 ✅
@@ -54,11 +54,11 @@ Start on 20 Auguast 2025
 | 33  | Refresh Tokens                                        ✅
 | 34  | Session & Cookies (express-session)                   ✅
 | 35  | Role-Based Access Control                             ✅
-| 36  | OAuth with Google or GitHub        
-| 37  | WebSockets (Intro to socket.io)    
-| 38  | API Rate Limiting, Throttling      
-| 39  | Express Performance Optimization   
-| 40  | Build: Secure Auth System           
+| 36  | OAuth with Google or GitHub
+| 37  | WebSockets (Intro to socket.io)
+| 38  | API Rate Limiting, Throttling
+| 39  | Express Performance Optimization
+| 40  | Build: Secure Auth System
 ---
 
 ### ✅ *Phase 4: Final Projects & Deployment (Day 41–50)*
