@@ -37,6 +37,8 @@ npm i -D typescript ts-node-dev @types/node @types/express
 ## 🧠 Step 4: TypeScript config file banao
 ```bash
 npx tsc --init
+npm install ts-node-dev --save-dev
+
 ```
 
 Ab `tsconfig.json` file ban jayegi.  
@@ -126,31 +128,6 @@ Bilkul ✅ sahi kaha tumne — aur haan, **yei `tsconfig.json`** perfect configu
   "exclude": ["node_modules"]          // node_modules ko ignore karega
 }
 ```
-
----
-
-### 🧠 Tip:
-
-Agar tum sirf `src` folder ke andar code rakhte ho (jo best practice hai),
-to thoda sa aur clean version ye hota hai 👇
-Or phir ya bhi dlna prta hai hmra is tsconfig.json ma
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
-}
-```
-
 
 ---
 
