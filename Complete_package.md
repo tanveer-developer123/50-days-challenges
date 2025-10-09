@@ -41,7 +41,7 @@ npm install ts-node-dev --save-dev
 
 ```
 
-Ab `tsconfig.json` file ban jayegi.  
+Ab `tsconfig.json` file ban jayegi.
 Isme kuch important changes karo 👇
 
 ### ✅ `tsconfig.json` (edited version)
@@ -103,7 +103,7 @@ app.listen(PORT, () => {
   "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
   "build": "tsc",
   "start": "node dist/index.js"
-}
+} 
 ```
 
 Bilkul ✅ sahi kaha tumne — aur haan, **yei `tsconfig.json`** perfect configuration hai express + TypeScript projects ke liye 👇
