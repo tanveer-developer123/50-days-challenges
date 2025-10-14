@@ -57,7 +57,7 @@ Start on 20 Auguast 2025
 | 36  | OAuth with Google or GitHub                           ✅
 | 37  | WebSockets (Intro to socket.io)                       ✅
 | 38  | API Rate Limiting, Throttling                         ✅
-| 39  | Express Performance Optimization
+| 39  | Express Performance Optimization                      ✅
 | 40  | Build: Secure Auth System
 ---
 
