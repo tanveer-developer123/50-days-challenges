@@ -6,9 +6,8 @@ app.use(express.json());
 
 app.get('/', (req, res)=>{
 res.send("Server Home page");
-})
+});
 
-
-app.listen(PORT , ()=>{
-console.log(`Server is running on localhost:${PORT`);
+app.listen(PORT, ()=>{
+    console.log(`server is running on localhost:${PORT}`)
 })

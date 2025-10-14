@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Profile</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
+
+      .profile-card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        width: 360px;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-card:hover {
+        transform: scale(1.02);
+      }
+
+      img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        border: 3px solid white;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        margin: 0.5rem 0;
+      }
+
+      p {
+        color: #f0f0f0;
+        margin-bottom: 1rem;
+      }
+
+      a {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        background: white;
+        color: #764ba2;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        background: #f1f1f1;
+        transform: scale(1.05);
+      }
+
+      .logout {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        margin-left: 10px;
+      }
+
+      .logout:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <img src="<%= user.photos[0].value %>" alt="Profile Picture" />
+      <h2><%= user.displayName %></h2>
+      <p><%= user.emails[0].value %></p>
+      <a href="/">🏠 Home</a>
+      <a href="/auth/logout" class="logout">Logout</a>
+    </div>
+  </body>
+</html>

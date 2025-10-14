@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login — Day 40 Auth</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        text-align: center;
+        width: 360px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+
+      .card h2 {
+        margin-bottom: 1rem;
+      }
+
+      .google-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.2rem;
+        background: white;
+        color: #444;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 1.5rem;
+      }
+
+      .google-btn img {
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .google-btn:hover {
+        background: #f1f1f1;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h2>Welcome 👋</h2>
+      <% if (!user) { %>
+      <p>Sign in to continue to your dashboard</p>
+      <a class="google-btn" href="/auth/google">
+        <img src="https://www.google.com/favicon.ico" alt="G" /> Continue with
+        Google
+      </a>
+      <% } else { %>
+      <p>You’re signed in as <strong><%= user.displayName %></strong></p>
+      <a href="/profile">Go to Profile</a> |
+      <a href="/auth/logout">Logout</a>
+      <% } %>
+    </div>
+  </body>
+</html>

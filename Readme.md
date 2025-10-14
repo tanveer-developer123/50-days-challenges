@@ -58,7 +58,7 @@ Start on 20 Auguast 2025
 | 37  | WebSockets (Intro to socket.io)                       ✅
 | 38  | API Rate Limiting, Throttling                         ✅
 | 39  | Express Performance Optimization                      ✅
-| 40  | Build: Secure Auth System
+| 40  | Build: Secure Auth System                             ✅
 ---
 
 ### ✅ *Phase 4: Final Projects & Deployment (Day 41–50)*
