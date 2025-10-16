@@ -5,7 +5,7 @@ const PORT = 5000;
 app.use(express.json());
 
 app.get('/', (req, res)=>{
-res.send("Server Home page");
+res.send("Server Home page Ecommerce platform");
 });
 
 app.listen(PORT, ()=>{
