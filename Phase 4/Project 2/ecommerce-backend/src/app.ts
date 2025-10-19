@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import authRoutes from "./routes/authRoutes";
 import productRoutes from "./routes/productRoutes";
 import categoryRoutes from "./routes/categoryRoutes";
-import orderRoutes from './routes/orderRoutes';
+import orderRoutes from "./routes/orderRoutes";
 
 dotenv.config();
 
